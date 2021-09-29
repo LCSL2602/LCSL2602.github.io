@@ -11,32 +11,34 @@
 <body>
     <div id="app" class="container-fluid bg-dark full_screen " >
        <div class="row">
-           <div class="col-sm-4">
-               <!-- <div class="mt-5" >
-                   <h1 v-for="item in list_addend">
-                       {{item == 7 ? 'X' : item }}
-                    </h1>
-                </div> -->
+           <div class="col-sm-3">
+               <div>
+                     <h5>
+                        {{ time.toDateString() }} {{ time.toLocaleTimeString() }}
+                     </h5>
+                </div>
            </div> 
-           <div class="col-sm-4  mt-5 ">
+           <div class="col-sm-6  mt-10 ">
               <div class="row">
                   <div class="col-sm-12 text-center">
-                        <h1 class="max-string" >
+                        <h1 class="plus-ultra" >
                             {{ num == 7 ? 'X' : num }}
                         </h1>
-                        <h5>
-                            {{ time }}
-                        </h5>
+                        
                   </div>
               </div>
-              <div class="card mt-10 text-center">
-                <div class="card-body">
-                  <button type="button" @click="()=> add_random()" class="btn btn-outline-primary rounded-circle "> <i class="bi bi-plus-lg"></i></button>
-                  <!-- <button type="button" @click="()=> clean()"  class="btn btn-outline-danger rounded-circle "> <i class="bi bi-arrow-clockwise"></i>  </button> -->
-                </div>
+              <div class="text-center mt-3">
+                  <button type="button" @click="()=> add_random()" class="btn big-btn btn-orange rounded-circle "> <i class="bi bi-plus-lg"></i></button>
+              </div>
+              <div class="row">
+                  <div class="col-sm-12 text-center mt-5">
+                      <h1 v-if="num != 'Vigilantia' " class="max-string" >
+                          {{num == 7 ? '¡REVISIÓN!': '¡Buen Viaje!' }}
+                      </h1>
+                  </div>
               </div>
            </div>
-           <div class="col-sm-4"></div>
+           <div class="col-sm-3"></div>
        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
@@ -50,12 +52,30 @@
         min-height: 100vh;
     }
     .max-string{
-        font-size: 200px;
+        font-size: 80px;
+    }
+    .plus-ultra{
+        font-size: 80px;
     }
     .mt-10{
-        margin-top: 100px !important;
+        margin-top: 120px !important;
     }
     body{
         color: orange;
+    }
+    .btn-orange{
+        color:orange;
+        border-color: orange;
+    }
+    .big-btn{
+         width: 50px;
+         height: 50px;
+    }
+
+    @media screen and (min-width: 800px) {
+        .plus-ultra{
+            
+            font-size: 9.375em;
+        }
     }
 </style>

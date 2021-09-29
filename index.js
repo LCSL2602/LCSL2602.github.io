@@ -1,9 +1,9 @@
 const app = new Vue({
     el: '#app',
     data: {
-      num:'Init',
+      num:'Vigilantia',
       list_addend:[],
-      time: new Date()
+      time: new Date(),
     },
     methods:{
         clean(){
@@ -24,5 +24,5 @@ const app = new Vue({
                         }
                 }
         }
-    }
+    },
 })

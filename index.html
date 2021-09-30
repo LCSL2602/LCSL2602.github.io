@@ -20,20 +20,24 @@
            </div> 
            <div class="col-sm-6  mt-10 ">
               <div class="row">
-                  <div class="col-sm-12 text-center">
-                        <h1 class="plus-ultra" >
-                            {{ num == 7 ? 'X' : num }}
-                        </h1>
-                        
-                  </div>
+                <div v-if="flagMsg" class="col-sm-12 text-center">
+                    <h1 class="plus-ultra" >
+                        VIGILANTIA
+                    </h1>
+                </div>
+                <div v-if="!flagMsg" class="col-sm-12 text-center">
+                    <h1 class="num-plus-ultra" >
+                        {{ num == 7 ? 'X' : num }}
+                    </h1>
+                 </div>
               </div>
               <div class="text-center mt-3">
                   <button type="button" @click="()=> add_random()" class="btn big-btn btn-orange rounded-circle "> <i class="bi bi-plus-lg"></i></button>
               </div>
               <div class="row">
                   <div class="col-sm-12 text-center mt-5">
-                      <h1 v-if="num != 'Vigilantia' " class="max-string" >
-                          {{num == 7 ? '¡REVISIÓN!': '¡Buen Viaje!' }}
+                      <h1 v-if="num != '' " class="max-string" >
+                          {{num == 7 ? '¡REVISIÓN!': '¡BUEN VIAJE!' }}
                       </h1>
                   </div>
               </div>
@@ -57,6 +61,9 @@
     .plus-ultra{
         font-size: 80px;
     }
+    .num-plus-ultra{
+        font-size: 150px;
+    }
     .mt-10{
         margin-top: 120px !important;
     }
@@ -75,7 +82,7 @@
     @media screen and (min-width: 800px) {
         .plus-ultra{
             
-            font-size: 9.375em;
+            font-size: 120px;
         }
     }
 </style>

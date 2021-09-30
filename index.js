@@ -1,7 +1,8 @@
 const app = new Vue({
     el: '#app',
     data: {
-      num:'Vigilantia',
+      flagMsg: true,
+      num:'',
       list_addend:[],
       time: new Date(),
     },
@@ -11,6 +12,7 @@ const app = new Vue({
             this.num = 0
         },
         add_random(){
+            this.flagMsg = false
             this.time = new Date()
             if(this.list_addend.length == 7){
                 this.clean()

@@ -10,44 +10,41 @@
     <title>Random number</title>
 </head>
 <body>
-    <div id="app" class="container-fluid bg-dark full_screen " >
+    <div id="app" class="container-fluid  full_screen " >
        <div class="row">
            <div class="col-sm-3 ">
                 <div class="row">
                     <div class="col-sm-12 mt-2">
-                        <img class="size-img" src="./assets/aeropuerto-mexico.jpg" alt="">
+                        <img class="size-img" src="./assets/photo_2021-12-16_09-28-45.jpg" alt="">
                     </div>
                 </div>
            </div>
            <div class="col-sm-6  ">
+               <div class="row">
+                <div class="col-sm-12  p-5">
+                    <img class="size-img" src="./assets/good_travel.png" alt="">
+                </div>
+               </div>
               <div class="row">
-                <div v-if="flagMsg" class="  mt-10 col-sm-12 text-center">
-                    <h1 class="plus-ultra" >
-                        VIGILANTIA
-                    </h1>
+                <div v-if="flagMsg" class=" mt-1 col-sm-12 text-center">
+                    <img  src="./assets/cuadro-vacio.png" alt="">
                 </div>
                 <div v-if="!flagMsg" class="  mt-5 col-sm-12 text-center">
-                    <h1 class="num-plus-ultra" >
-                        {{ num == 7 ? 'X' : num }}
+                    <h1 :class="[ num === 5 ? 'plus-ultra' : 'num-plus-ultra' ]" >
+                        {{ num == 5 ? '¡REVISIÓN!' : num }}
                     </h1>
+                    <h5 class="time-size" >
+                        {{ time.toDateString() }} {{ time.toLocaleTimeString() }}
+                    </h5>
                  </div>
               </div>
               <div class="text-center mt-3">
                   <button type="button" @click="()=> add_random()" class="btn big-btn btn-orange rounded-circle "> <i class="bi bi-plus-lg"></i></button>
               </div>
               <div class="row">
-                  <div class="col-sm-12 text-center mt-5">
-                      <h1 v-if="num != '' " class="max-string" >
-                          {{num == 7 ? '¡REVISIÓN!': '¡BUEN VIAJE!' }}
-                      </h1>
-                      <div class="row">
-                        <div class="col-sm-12 " >
-                             <h5 class="time-size" >
-                                 {{ time.toDateString() }} {{ time.toLocaleTimeString() }}
-                             </h5>
-                         </div>
-                     </div>
-                  </div>
+                    <div class="col-sm-12 text-center p-3">
+                        <img  src="./assets/aeropuerto-mexico.jpg" alt="">
+                    </div>
               </div>
            </div>
            <div class="col-sm-3">
